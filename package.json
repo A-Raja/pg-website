@@ -2,7 +2,7 @@
   "name": "my-pg",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://your-username.github.io/repo-name",
+  "homepage": "https://your-username.github.io/pg-website",
   "dependencies": {
     "@react-three/drei": "^10.0.4",
     "@react-three/fiber": "^9.1.0",
