@@ -1,0 +1,159 @@
+/* FacilitiesPage.css */
+.facilities-page {
+  font-family: sans-serif;
+  text-align: center;
+  /* background-image: url('/facilities-bg.jpg'); Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  padding: 50px 20px;
+  min-height: 100vh;
+  color: #333;
+  position: relative;
+}
+
+.facilities-page::before {
+  content: ""; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(14, 93, 229, 0.5);
+  z-index: -1;
+}
+
+.facilities-header {
+  margin-bottom: 40px;
+}
+
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.facility-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  border-radius: 15px 15px 0 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.facility-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #ffe0b2;
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}
+
+.facility-item:hover {
+  transform: translateY(-5px);
+}
+
+.facility-icon {
+  max-width: 80px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #4a6572;
+}
+
+h3 {
+  color: #4a6572;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* WiFi Effect */
+.facility-item.wifi-effect .facility-icon {
+  position: relative;
+}
+
+.facility-item.wifi-effect .facility-icon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #007bff;
+  opacity: 0;
+  animation: wifiSignal 2s linear infinite;
+}
+
+@keyframes wifiSignal {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Animated Girls Effect */
+.facility-item.girls-effect .facility-icon {
+  position: relative;
+  overflow: hidden;
+}
+
+.facility-item.girls-effect .facility-icon::before,
+.facility-item.girls-effect .facility-icon::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 50px;
+  background-color: #ffc0cb;
+  border-radius: 15px;
+  animation: girlsMove 3s linear infinite alternate;
+}
+
+.facility-item.girls-effect .facility-icon::before {
+  left: 10px;
+  top: 10px;
+  animation-delay: 0.5s;
+}
+
+.facility-item.girls-effect .facility-icon::after {
+  left: 40px;
+  top: 30px;
+}
+
+@keyframes girlsMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(10px, -10px);
+  }
+}
+
+/* 3D-Like Effect (Example) */
+.facility-item.three-d-effect {
+  transform-style: preserve-3d;
+  perspective: 800px;
+}
+
+.facility-item.three-d-effect:hover {
+  transform: translateY(-5px) rotateY(5deg);
+  box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.2);
+}
